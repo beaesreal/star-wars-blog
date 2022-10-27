@@ -11,11 +11,10 @@ export const Card = ({ item, resource }) => {
         <div className="card my-5 mx-3 border-0 rounded-5" style={{ minWidth: "18rem" }}>
             <img src={`https://starwars-visualguide.com/assets/img/${resource === "people" ? "characters" : resource}/${item.uid}.jpg`} className="card-img-top" alt="..." />
             <div className="card-body bg-dark">
-                <h3 className="card-title font-weight-bold text-white">{item.name}</h3>
-                <p>{item.gender}</p>
+                <h3 className="card-title font-weight-bold text-white py-2">{item.name}</h3>
                 <div className="d-flex contanier justify-content-between">
                     <Link to={`/${resource}/${item.uid}`} className="btn btn-outline-primary">
-                        Learn more!
+                    <i className="fas fa-solid fa-arrow-right p-1"></i><strong> Learn more </strong>
                     </Link>
                     <button
                         type="button"

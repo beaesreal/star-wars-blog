@@ -26,9 +26,9 @@ export const Home = () => {
 					})}
 				</div>
 			</div>
-			<div className="d-flex flex-column mt-5 mb-5" style={{marginBottom:"100px"}}>
+			<div className="d-flex flex-column mt-5 mb-5">
 				<Title text="Planets"></Title>
-				<div className="d-flex flex-row flex-nowrap overflow-auto">
+				<div className="d-flex flex-row flex-nowrap overflow-auto" style={{marginBottom:"120px"}}>
 					{context.store.planets.map((planet, index) => {
 						return <Card key={planet.uid} item={planet} resource={"planets"} />
 						

@@ -43,16 +43,7 @@ export const Details = (props) => {
                                     <div className="col-md-2 p-3 text-light rounded m-2" style={{ backgroundColor: "#080a0f" }}><strong>Eye Color:<br></br></strong>{store.currentItem.properties.eye_color}</div>
                                 </div>
                             )}
-                            {params.resource === "planets" && (
-                                <div className="d-flex justify-content-around p-3 text-center" style={{ color: "#db2818" }}>
-                                    <div className="col-md-3 p-3 text-light rounded m-2" style={{ backgroundColor: "#080a0f" }}><strong>Name:<br></br></strong>{store.currentItem.properties.name}</div>
-                                    <div className="col-md-2 p-3 text-light rounded m-2" style={{ backgroundColor: "#080a0f" }}><strong>Climate:<br></br></strong>{store.currentItem.properties.climate}</div>
-                                    <div className="col-md-3 p-3 text-light rounded m-2" style={{ backgroundColor: "#080a0f" }}><strong>Population:<br></br></strong>{store.currentItem.properties.population}</div>
-                                    <div className="col-md-3 p-3 text-light rounded m-2" style={{ backgroundColor: "#080a0f" }}><strong>Orbital Period:<br></br></strong>{store.currentItem.properties.orbital_period}</div>
-                                    <div className="col-md-3 p-3 text-light rounded m-2" style={{ backgroundColor: "#080a0f" }}><strong>Rotation Period:<br></br></strong>{store.currentItem.properties.rotation_period}</div>
-                                    <div className="col-md-2 p-3 text-light rounded m-2" style={{ backgroundColor: "#080a0f" }}><strong>Diameter:<br></br></strong>{store.currentItem.properties.diameter}</div>
-                                </div>
-                            )}
+
                             {params.resource === "vehicles" && (
                                 <div className="d-flex justify-content-around p-3 text-center" style={{ color: "#db2818" }}>
                                     <div className="col-md-3 p-3 text-light rounded m-2" style={{ backgroundColor: "#080a0f" }}><strong>Name:<br></br></strong>{store.currentItem.properties.name}</div>
@@ -63,6 +54,18 @@ export const Details = (props) => {
                                     <div className="col-md-3 p-3 text-light rounded m-2" style={{ backgroundColor: "#080a0f" }}><strong>Consumables:<br></br></strong>{store.currentItem.properties.consumables}</div>
                                 </div>
                             )}
+
+                            {params.resource === "planets" && (
+                                <div className="d-flex justify-content-around p-3 text-center" style={{ color: "#db2818" }}>
+                                    <div className="col-md-3 p-3 text-light rounded m-2" style={{ backgroundColor: "#080a0f" }}><strong>Name:<br></br></strong>{store.currentItem.properties.name}</div>
+                                    <div className="col-md-2 p-3 text-light rounded m-2" style={{ backgroundColor: "#080a0f" }}><strong>Climate:<br></br></strong>{store.currentItem.properties.climate}</div>
+                                    <div className="col-md-3 p-3 text-light rounded m-2" style={{ backgroundColor: "#080a0f" }}><strong>Population:<br></br></strong>{store.currentItem.properties.population}</div>
+                                    <div className="col-md-3 p-3 text-light rounded m-2" style={{ backgroundColor: "#080a0f" }}><strong>Orbital Period:<br></br></strong>{store.currentItem.properties.orbital_period}</div>
+                                    <div className="col-md-3 p-3 text-light rounded m-2" style={{ backgroundColor: "#080a0f" }}><strong>Rotation Period:<br></br></strong>{store.currentItem.properties.rotation_period}</div>
+                                    <div className="col-md-2 p-3 text-light rounded m-2" style={{ backgroundColor: "#080a0f" }}><strong>Diameter:<br></br></strong>{store.currentItem.properties.diameter}</div>
+                                </div>
+                            )}
+                            
                         </div>
                     </div>
                 </React.Fragment>
