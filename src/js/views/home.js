@@ -26,7 +26,7 @@ export const Home = () => {
 					})}
 				</div>
 			</div>
-			<div className="d-flex flex-column mt-5 mb-5">
+			<div className="d-flex flex-column mt-5 mb-5" style={{marginBottom:"100px"}}>
 				<Title text="Planets"></Title>
 				<div className="d-flex flex-row flex-nowrap overflow-auto">
 					{context.store.planets.map((planet, index) => {
