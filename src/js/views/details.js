@@ -22,7 +22,9 @@ export const Details = (props) => {
                     <div className="card mb-3 border-0" style={{ maxWidth: "700px", maxHeight: "800px" }}>
                         <div className="row g-0 d-flex align-item-center" style={{ backgroundColor: "#0C0E14" }}>
                             <div className="col-md-6 align-self-center">
-                                <img src={`https://starwars-visualguide.com/assets/img/${params.resource === "people" ? "characters" : params.resource}/${params.uid}.jpg`} className="card-img-top" alt="..." />
+                                <img src={(params.resource === "planets" && params.uid === "1") ? "https://static.wikia.nocookie.net/theclonewiki/images/b/b4/Tatooine-TCW.png/" : `https://starwars-visualguide.com/assets/img/${params.resource === "people" ? "characters" : params.resource}/${params.uid}.jpg`} className="card-img-top" alt="..." />
+                                
+                                
                             </div>
                             <div className="col-md-6">
                                 <div className="card-body">

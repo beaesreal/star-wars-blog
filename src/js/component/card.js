@@ -8,8 +8,9 @@ export const Card = ({ item, resource }) => {
     const { store, actions } = useContext(Context);
 
     return (
-        <div className="card my-5 mx-3 border-0 rounded-5" style={{ minWidth: "18rem" }}>
-            <img src={`https://starwars-visualguide.com/assets/img/${resource === "people" ? "characters" : resource}/${item.uid}.jpg`} className="card-img-top" alt="..." />
+        <div className="card my-5 mx-3 border-0 rounded-5" style={{ minWidth: "18rem" }} >
+            
+            <img src={(resource === "planets" && item.uid === "1") ? "https://static.wikia.nocookie.net/theclonewiki/images/b/b4/Tatooine-TCW.png/" : `https://starwars-visualguide.com/assets/img/${resource === "people" ? "characters" : resource}/${item.uid}.jpg`} className="card-img-top" alt="..." />
             <div className="card-body bg-dark">
                 <h3 className="card-title font-weight-bold text-white py-2">{item.name}</h3>
                 <div className="d-flex contanier justify-content-between">
