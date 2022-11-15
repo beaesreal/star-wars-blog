@@ -14,7 +14,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			getItems: async (resource) => {
 				const store = getStore();
 				const response = await fetch(
-					`${store.baseURL}/${resource}?page=1&limit=20`
+					// Changed to 15 the limit of cards of each category (instead of 10)
+					`${store.baseURL}/${resource}?page=1&limit=15`
 				);
 				const body = await response.json();
 				setStore({

@@ -110,3 +110,7 @@ body{
 .dropdown-menu{
     background-color: #d1d7dd;
 }
+
+.btn-fav-clicked{
+    background-color: red;
+}
