@@ -6,7 +6,18 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 export const Card = ({ item, resource }) => {
     const { store, actions } = useContext(Context);
-    const [ selectedColor, setSelectedColor ] = useState ("");
+    
+    
+    const [ like, setLike ] = useState (false);
+    const handleClick = () =>{
+        setLike(!like)
+    }
+
+    useEffect(()=>{
+        if(like) {
+            actions.getFavorites (resource, item.uid)
+        }
+    },[like])
 
     return (
         <div className="card my-5 mx-3 border-0 rounded-5" style={{ minWidth: "18rem" }} >
@@ -22,12 +33,12 @@ export const Card = ({ item, resource }) => {
                     <button
                         type="button"
                         
-                        onClick={(e) => {
-                            setSelectedColor(("btn btn-outline-warning"))
-                            console.log(resource, item.uid);
-                            actions.getFavorites(resource, item.uid); 
-                        }}
-                        className={"btn btn-outline-warning" + (selectedColor === "btn btn-outline-warning" ? "btn btn-warning" : "")}>
+                        onClick={
+                            handleClick
+                        }
+                           
+                        
+                        className={"btn btn-outline-warning" + (like ? "btn btn-warning" : "btn btn-outline-warning" )}>
                         <i className="fas fa-regular fa-heart"></i>
                     </button>
                 </div>
