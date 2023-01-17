@@ -14,7 +14,7 @@ export const Home = () => {
 				<Title text="Characters"></Title>
 				<div className="d-flex flex-row flex-nowrap overflow-auto">
 					{context.store.people.map((character, index) => {
-						return <Card key={character.uid} item={character} resource={"people"} />
+						return <Card key={character.uid} item={character} resource={"people"} index={index} />
 					})}
 				</div>
 			</div>
@@ -22,7 +22,7 @@ export const Home = () => {
 				<Title text="Vehicles"></Title>
 				<div className="d-flex flex-row flex-nowrap overflow-auto">
 					{context.store.vehicles.map((vehicle, index) => {
-						return <Card key={vehicle.uid} item={vehicle} resource={"vehicles"} />
+						return <Card key={vehicle.uid} item={vehicle} resource={"vehicles"}  index={index}/>
 					})}
 				</div>
 			</div>
@@ -30,7 +30,7 @@ export const Home = () => {
 				<Title text="Planets"></Title>
 				<div className="d-flex flex-row flex-nowrap overflow-auto" style={{marginBottom:"120px"}}>
 					{context.store.planets.map((planet, index) => {
-						return <Card key={planet.uid} item={planet} resource={"planets"} />
+						return <Card key={planet.uid} item={planet} resource={"planets"}  index={index}/>
 						
 					})}
 				</div>

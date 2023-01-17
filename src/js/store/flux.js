@@ -7,7 +7,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			vehicles: [],
 			currentItem: undefined,
 			list:[],
-			favorite: undefined,
+			favorites: [],
 		},
 
 		actions: {
@@ -58,6 +58,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				});
 				console.log(store.list);
 			},
+			
 			
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");

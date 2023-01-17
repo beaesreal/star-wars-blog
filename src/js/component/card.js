@@ -4,20 +4,35 @@ import { Context } from "../store/appContext";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
-export const Card = ({ item, resource }) => {
+export const Card = ({ item, resource, index }) => {
     const { store, actions } = useContext(Context);
     
-    
     const [ like, setLike ] = useState (false);
+
     const handleClick = () =>{
+        if(like){
+            const deleteFavorite = store.list.filter(
+                (deleteFavorite, i) => {
+                    if (index == i) {
+                        return false;
+                    } else {
+                        return true;
+                    }
+                }
+            );
+            console.log(deleteFavorite);
+            actions.deleteFavorite(deleteFavorite);
+        }
         setLike(!like)
     }
 
     useEffect(()=>{
         if(like) {
-            actions.getFavorites (resource, item.uid)
+            actions.getFavorites(resource, item.uid)
         }
     },[like])
+
+    
 
     return (
         <div className="card my-5 mx-3 border-0 rounded-5" style={{ minWidth: "18rem" }} >
@@ -36,7 +51,7 @@ export const Card = ({ item, resource }) => {
                         onClick={
                             handleClick
                         }
-                           
+                        
                         
                         className={"btn btn-outline-warning" + (like ? "btn btn-warning" : "btn btn-outline-warning" )}>
                         <i className="fas fa-regular fa-heart"></i>
